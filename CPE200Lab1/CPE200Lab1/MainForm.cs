@@ -12,6 +12,7 @@ namespace CPE200Lab1
 {
     public partial class MainForm : Form
     {
+        private String mResult;
         private bool hasDot;
         private bool isAllowBack;
         private bool isAfterOperater;
@@ -20,6 +21,7 @@ namespace CPE200Lab1
         private string operate;
         private bool secondOperandClicked = false;
         private CalculatorEngine cal = new CalculatorEngine();
+
         private void resetAll()
         {
             lblDisplay.Text = "0";
@@ -162,10 +164,6 @@ namespace CPE200Lab1
             {
                 return;
             }
-            if (isAfterEqual)
-            {
-                resetAll();
-            }
             // already contain negative sign
             if (lblDisplay.Text.Length is 8)
             {
@@ -218,6 +216,54 @@ namespace CPE200Lab1
         private void lblDisplay_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Double oneOverX = (1 / Convert.ToDouble(lblDisplay.Text));
+            oneOverX = Math.Round(oneOverX, 7);
+            lblDisplay.Text = oneOverX.ToString();
+        }
+
+        private void btnM_Click(object sender, EventArgs e)
+        {
+            string mOperate = ((Button)sender).Text;
+            switch (mOperate)
+            {
+                case "MC":
+                    mResult = "0";
+                    lblDisplay.Text = "0";
+                    lblM.Text = mResult; break;
+                case "MR":
+                    lblDisplay.Text = mResult;
+                    break;
+                case "MS":
+                    mResult = lblDisplay.Text;
+                    lblM.Text = mResult;
+                    break;
+                case "M+":
+                    if(mResult=="0")mResult = lblDisplay.Text;
+                    mResult =(Convert.ToDouble(mResult) + Convert.ToDouble(lblDisplay.Text)).ToString();
+                    lblM.Text = mResult; break;
+                case "M-":
+                    mResult = (Convert.ToDouble(mResult) - Convert.ToDouble(lblDisplay.Text)).ToString();
+                    lblM.Text = mResult; break;
+            }
+        }
+
+        private void root_Click(object sender, EventArgs e)
+        {
+            Double sqrt = (Math.Sqrt(Convert.ToDouble(lblDisplay.Text)));
+            sqrt = Math.Round(sqrt, 7);
+            lblDisplay.Text = sqrt.ToString();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            double percent;
+            //percent = (Convert.ToDouble(lblDisplay.Text)) *
+            percent = Convert.ToDouble(firstOperand) * (Convert.ToDouble(lblDisplay.Text)/100);
+            lblDisplay.Text = percent.ToString();
         }
     }
 }

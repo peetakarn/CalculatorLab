@@ -52,11 +52,13 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.oneOverX = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
+            this.lblM = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn7
@@ -244,7 +246,7 @@
             this.btnDivide.TabIndex = 16;
             this.btnDivide.Text = "M+";
             this.btnDivide.UseVisualStyleBackColor = true;
-            this.btnDivide.Click += new System.EventHandler(this.btnOperator_Click);
+            this.btnDivide.Click += new System.EventHandler(this.btnM_Click);
             // 
             // btnPercent
             // 
@@ -255,7 +257,7 @@
             this.btnPercent.TabIndex = 17;
             this.btnPercent.Text = "MS";
             this.btnPercent.UseVisualStyleBackColor = true;
-            this.btnPercent.Click += new System.EventHandler(this.btnOperator_Click);
+            this.btnPercent.Click += new System.EventHandler(this.btnM_Click);
             // 
             // btnClear
             // 
@@ -284,7 +286,7 @@
             this.lblDisplay.AutoSize = true;
             this.lblDisplay.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 54F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDisplay.Location = new System.Drawing.Point(111, 28);
+            this.lblDisplay.Location = new System.Drawing.Point(56, 34);
             this.lblDisplay.MinimumSize = new System.Drawing.Size(365, 0);
             this.lblDisplay.Name = "lblDisplay";
             this.lblDisplay.Size = new System.Drawing.Size(365, 82);
@@ -302,6 +304,7 @@
             this.button1.TabIndex = 21;
             this.button1.Text = "M-";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btnM_Click);
             // 
             // button2
             // 
@@ -312,6 +315,7 @@
             this.button2.TabIndex = 22;
             this.button2.Text = "√ ";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.root_Click);
             // 
             // button3
             // 
@@ -322,16 +326,18 @@
             this.button3.TabIndex = 23;
             this.button3.Text = "%";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button4
+            // oneOverX
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(388, 335);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(88, 64);
-            this.button4.TabIndex = 24;
-            this.button4.Text = "1/X";
-            this.button4.UseVisualStyleBackColor = true;
+            this.oneOverX.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.oneOverX.Location = new System.Drawing.Point(388, 335);
+            this.oneOverX.Name = "oneOverX";
+            this.oneOverX.Size = new System.Drawing.Size(88, 64);
+            this.oneOverX.TabIndex = 24;
+            this.oneOverX.Text = "1/X";
+            this.oneOverX.UseVisualStyleBackColor = true;
+            this.oneOverX.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -342,6 +348,7 @@
             this.button5.TabIndex = 25;
             this.button5.Text = "÷";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.btnOperator_Click);
             // 
             // button6
             // 
@@ -352,6 +359,7 @@
             this.button6.TabIndex = 26;
             this.button6.Text = "MC";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.btnM_Click);
             // 
             // button7
             // 
@@ -362,6 +370,7 @@
             this.button7.TabIndex = 27;
             this.button7.Text = "MR";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.btnM_Click);
             // 
             // button8
             // 
@@ -373,16 +382,38 @@
             this.button8.Text = "CE";
             this.button8.UseVisualStyleBackColor = true;
             // 
+            // lblM
+            // 
+            this.lblM.AutoSize = true;
+            this.lblM.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblM.Location = new System.Drawing.Point(120, 5);
+            this.lblM.Name = "lblM";
+            this.lblM.Size = new System.Drawing.Size(26, 29);
+            this.lblM.TabIndex = 29;
+            this.lblM.Text = "0";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label1.Location = new System.Drawing.Point(12, 5);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(95, 25);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "Memory";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(488, 551);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblM);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.oneOverX);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -440,11 +471,13 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button oneOverX;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Label lblM;
+        private System.Windows.Forms.Label label1;
     }
 }
 
