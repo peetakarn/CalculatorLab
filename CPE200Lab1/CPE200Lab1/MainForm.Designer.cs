@@ -374,10 +374,10 @@
             // lblM
             // 
             this.lblM.AutoSize = true;
-            this.lblM.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.lblM.Location = new System.Drawing.Point(120, 5);
+            this.lblM.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblM.Location = new System.Drawing.Point(113, 5);
             this.lblM.Name = "lblM";
-            this.lblM.Size = new System.Drawing.Size(26, 29);
+            this.lblM.Size = new System.Drawing.Size(24, 25);
             this.lblM.TabIndex = 29;
             this.lblM.Text = "0";
             // 
@@ -427,7 +427,7 @@
             this.Controls.Add(this.btn8);
             this.Controls.Add(this.btn7);
             this.Name = "MainForm";
-            this.Text = "Form1";
+            this.Text = "A CAL";
             this.ResumeLayout(false);
             this.PerformLayout();
 
