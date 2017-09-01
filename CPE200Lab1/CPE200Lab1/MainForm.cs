@@ -109,6 +109,7 @@ namespace CPE200Lab1
                     secondOperandClicked = true;
                     firstOperand = lblDisplay.Text;
                     isAfterOperater = true;
+                    hasDot = false;
                     break;
                 case "%":
                     // your code here
@@ -142,10 +143,6 @@ namespace CPE200Lab1
             if (lblDisplay.Text is "Error")
             {
                 return;
-            }
-            if (isAfterEqual)
-            {
-                resetAll();
             }
             if (lblDisplay.Text.Length is 8)
             {
@@ -254,8 +251,8 @@ namespace CPE200Lab1
         private void root_Click(object sender, EventArgs e)
         {
             Double sqrt = (Math.Sqrt(Convert.ToDouble(lblDisplay.Text)));
-            sqrt = Math.Round(sqrt, 7);
-            lblDisplay.Text = sqrt.ToString();
+            
+            lblDisplay.Text = cal.DecimalManage(sqrt);
         }
 
         private void button3_Click(object sender, EventArgs e)
